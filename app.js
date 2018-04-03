@@ -48,8 +48,6 @@ function requireLogin(req, res, next) {
   }
 }
 
-//authenticate post
-app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
 
 //routers
 const fetch = require('./routes/fetchs');
@@ -64,11 +62,11 @@ app.use('/deletes',d_delete);
 app.use('/sets',s_set);
 
 
-app.get('/',requireLogin, (req,res) =>{
+app.get('/', (req,res) =>{
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.get('/edit',requireLogin,function(req,res){
+app.get('/edit',function(req,res){
   res.sendFile(path.join(__dirname+'/public/edit_product.html'));
 });
 
