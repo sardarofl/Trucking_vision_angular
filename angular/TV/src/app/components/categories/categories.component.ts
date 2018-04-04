@@ -9,6 +9,8 @@ import {GetdataService} from '../../services/getdata.service';
 export class CategoriesComponent implements OnInit {
   category:Category[];
   title:string;
+  deletedCategory:string;
+  editedCategory:string;
   months:string[];
   isavailable:boolean;
 
@@ -35,6 +37,17 @@ export class CategoriesComponent implements OnInit {
     this.title='brad traversy';
 
     }
+
+    deleteCategory(deletedCategory) {
+         //just added console.log which will display the event details in browser on click of the button.
+         alert("Delete "+ deletedCategory);
+
+      }
+
+      editCategory(editedCategory) {
+           //just added console.log which will display the event details in browser on click of the button.
+           alert("Edit "+editedCategory);
+        }
 
   // declared array of months.
 

@@ -6,7 +6,7 @@ var path = require('path');
 
 const Delete_Items={
 
-  DeleteFromCategories:function(item, category,res, callback){
+  DeleteFromCategories:function(item,res, callback){
   var data = {
     "Data":""
   };

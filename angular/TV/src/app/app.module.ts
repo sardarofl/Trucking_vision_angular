@@ -8,6 +8,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 
 import { GetdataService } from './services/getdata.service';
 
+import { MaterializeModule } from 'angular2-materialize';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { GetdataService } from './services/getdata.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    MaterializeModule
   ],
   providers: [GetdataService],
   bootstrap: [AppComponent]
