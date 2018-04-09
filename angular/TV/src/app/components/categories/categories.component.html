@@ -36,11 +36,20 @@
    </div>-->
 
    <div class="row">
-     <div class="input-field col s6">
+  <!--   <div class="input-field col s6">
        <input placeholder="Enter new category name" id="category_name" type="text" class="validate">
        <input id="image_name" type="file" name="image">
-     </div>
+        <br>
+         <br>
+       <button (click)="addCategory(item.id,item.category_name)" class="btn  green darken-1" id="submit">Add Category</button>
+     </div>-->
+     <form id = "formNewCategory" name ="formNewCategory" #categoryData = "ngForm" (ngSubmit) = "addCategory(categoryData)" >
+       <input type = "text" name ="name" id="name" placeholder="Enter category name" ngModel><br>
+       <input type = "file" id="selectFile" name="selectFile" ><br><br>
+       <input type="submit" class="btn  green darken-1" value="Add Category">
+     </form>
    </div>
+
    <table class="responsive-table striped">
           <thead>
             <tr>
@@ -55,7 +64,7 @@
             <tr *ngFor="let item of category">
               <td>{{item.category_name}}</td>
               <td>{{item.image}}</td>
-              <td> <a (click)="deleteCategory(item.id)" class="waves-effect waves-light red darken-3 btn"><i  class="material-icons left">delete</i>Delete</a></td>
+              <td> <a (click)="deleteCategory(item.id,item.category_name)" class="waves-effect waves-light red darken-3 btn"><i  class="material-icons left">delete</i>Delete</a></td>
               <td> <a (click)="editCategory(item.category_name)" class="waves-effect waves-light indigo darken-4 btn"><i class="material-icons left">edit</i>Edit</a></td>
 
             </tr>

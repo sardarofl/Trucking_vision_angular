@@ -5,10 +5,11 @@ const config = require('../config/database');
 const Delete = require('../models/delete');
 
 //delete category
-router.delete('/delete_category/:id',function(req,res){
+router.delete('/delete_category/:id/:category',function(req,res){
 	var item = req.params.id;
+	var category = req.params.category
 	var res = res;
-	Delete.DeleteFromCategories(item,res, function(err,rows){
+	Delete.DeleteFromCategories(item, category,res, function(err,rows){
 		if(err) return res.json(err);
 				 res.json(rows);
      });

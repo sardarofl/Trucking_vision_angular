@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
 const config = require('../config/database');
 
 const Add = require('../models/add');
+
+
 
 //add category
 router.post('/add_category',function(req,res){

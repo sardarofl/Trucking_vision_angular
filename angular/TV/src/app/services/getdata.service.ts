@@ -8,14 +8,7 @@ export class GetdataService {
 
   constructor(private http:Http){  }
 
-
-
     getCategory(){
-      return this.http.get('http://localhost:3000/fetchs/fetch_categories')
-      .map(res => res.json());
-    }
-
-    deleteCategory(){
       return this.http.get('http://localhost:3000/fetchs/fetch_categories')
       .map(res => res.json());
     }
