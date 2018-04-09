@@ -10,18 +10,10 @@
     <meta name="author" content="">
 
     <title>Vision Trucking - Categories</title>
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,11 +29,10 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
+        <nav class="navbar indigo darken-4" role="navigation" style="margin-bottom: 0">
 
-                <a class="navbar-brand" href="index.html">Vision Trucking</a>
-            </div>
+                <a class="" style="font-size:1.9em; margin-left:20px;" href="index.html">Vision Trucking</a>
+
             <!-- /.navbar-header -->
 
               <!-- /.navbar-top-links -->
@@ -51,11 +42,11 @@
         </nav>
 
         <!-- Page Content -->
-        <div id="page-wrapper">
+        <div  class="container" id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Edit Categories</h1>
+                        <h3 class="page-header">Edit Categories</h3>
                     </div>
 						<!-- /.col-lg-12 -->
 
@@ -67,25 +58,20 @@
 </br>
 <div id="overlay_loading">
 <img id="gifspinner" src="../img/Gear-3.1s-200px.gif" alt="spinner" height="15%" width="15%">
-</div>
+</div><br>
            <div>
-             <button class="custom_button" type="submit" name="upload">Add Category</button>
+             <button class="btn  light-green darken-3" type="submit" name="upload">Add Category</button>
            </div>
            </form>
 </br>
-           <table id="trucking_categories" style="width:100%">
+           <table id="trucking_categories" class="responsive-table  striped" style="width:100%">
              <tr>
              <th>Category Name</th>
              <th>Image</th>
              <th>Delete</th>
              <th>Edit Products</th>
              </tr>
-             <tr>
-             <td ></td>
-             <td ></td>
-             <td ></td>
-             <td ></td>
-             </tr>
+
 
            </table>
 
@@ -103,7 +89,7 @@
 
 
       <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
 
 
 
@@ -133,8 +119,8 @@ xmlhttp.onreadystatechange = function() {
 
       cell1.innerHTML = myObj[i].category_name;
       cell2.innerHTML = myObj[i].image;
-      cell3.innerHTML ="<a href='#' id='delete_category' data-id="+myObj[i].id+" data-category="+encodeURIComponent(myObj[i].category_name.trim())+">Delete</a>";
-      cell4.innerHTML ="<a id='edit_category' href='/edit?id="+myObj[i].id+"&category="+myObj[i].category_name+"'>Edit Products</a>";
+      cell3.innerHTML ="<a href='#'  class='waves-effect waves-light red darken-3 btn' id='delete_category' data-id="+myObj[i].id+" data-category="+encodeURIComponent(myObj[i].category_name.trim())+"> <i class='material-icons'>delete</i></a>";
+      cell4.innerHTML ="<a   class='waves-effect waves-light  indigo darken-4 b btn' id='edit_category' href='/edit?id="+myObj[i].id+"&category="+myObj[i].category_name+"'><i class='material-icons'>edit</i></a>";
       }
   }
 };
@@ -200,7 +186,6 @@ xmlhttp.send();
 
 <style>
 table, th, td {
-    border: 1px solid black;
 	text-align:center;
 }
 

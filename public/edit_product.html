@@ -11,17 +11,10 @@
 
     <title>Vision Trucking - Categories</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
 
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,30 +29,28 @@
 
     <div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
+      <nav class="navbar indigo darken-4" role="navigation" style="margin-bottom: 0">
 
-                <a class="navbar-brand" href="index.html">Vision Trucking</a>
-            </div>
-            <!-- /.navbar-header -->
+              <a class="" style="font-size:1.9em; margin-left:20px;" href="index.html">Vision Trucking</a>
 
-              <!-- /.navbar-top-links -->
+          <!-- /.navbar-header -->
+
+            <!-- /.navbar-top-links -->
 
 
-            <!-- /.navbar-static-side -->
-        </nav>
+          <!-- /.navbar-static-side -->
+      </nav>
 
         <!-- Page Content -->
-        <div id="page-wrapper">
+        <div class="container" id="page-wrapper">
             <div class="container-fluid">
             </br>
                 <div class="row">
-                    <button id="back_to_categories" class="custom_button" >Back</button>
+                    <button id="back_to_categories" class="btn black" ><i class='material-icons'>arrow_back</i></button>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 id="category_identifier" class="page-header">Edit Product</h1>
+                        <h3 id="category_identifier" class="page-header">Edit Product</h3>
                     </div>
 						<!-- /.col-lg-12 -->
 <div id="overlay_loading">
@@ -75,24 +66,19 @@
            </div>
            </br>
            <div>
-             <button class="custom_button" type="submit" name="upload">Submit</button>
+             <button class="btn  light-green darken-3" type="submit" name="upload">Submit</button>
            </div>
 
            </form>
          </br>
-           <table id="trucking_products" style="width:100%">
+           <table id="trucking_products" class="responsive-table  striped" style="width:100%">
              <tr>
              <th>Product Name</th>
              <th>Image</th>
              <th>Delete</th>
              <th>Edit Products</th>
              </tr>
-             <tr>
-             <td ></td>
-             <td ></td>
-             <td ></td>
-             <td ></td>
-             </tr>
+
 
            </table>
 
@@ -109,8 +95,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 
-      <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
 
 
 
@@ -161,9 +147,9 @@ xmlhttp.onreadystatechange = function() {
       // Add some text to the new cells:
       cell1.innerHTML = myObj[i].product_name;
       cell2.innerHTML = myObj[i].image;
-      cell3.innerHTML ="<a href='#' id='delete_product' data-id="+myObj[i].id+" data-product="+encodeURIComponent(myObj[i].product_name.trim())+">Delete</a>";
+      cell3.innerHTML ="<a href='#'  class='waves-effect waves-light red darken-3 btn' id='delete_product' data-id="+myObj[i].id+" data-product="+encodeURIComponent(myObj[i].product_name.trim())+"><i class='material-icons'>delete</i></a>";
       //cell4.innerHTML ="<a id='edit_gallery' href=''>Edit Gallery</a>";
-      cell4.innerHTML ="<a id='edit_gallery' href='/gallery?id="+myObj[i].id+"&category="+category_selected+"'>Edit Products</a>";
+      cell4.innerHTML ="<a  class='waves-effect waves-light  indigo darken-4 b btn' id='edit_gallery' href='/gallery?id="+myObj[i].id+"&category="+category_selected+"'><i class='material-icons'>edit</i></a>";
 
       //cell5.innerHTML ="<form method='post'><input name='del_value' value="+myObj[i].id+" class='form-control'><input class='deletetable' type='submit' value='Delete' class='btn btn-primary'></input></form>";
     }
@@ -249,8 +235,7 @@ $(document).on("click", "#back_to_categories", function(){
 
 <style>
 table, th, td {
-    border: 1px solid black;
-	text-align:center;
+
 }
 
 .custom_button {
