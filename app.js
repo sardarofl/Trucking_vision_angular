@@ -81,6 +81,14 @@ app.get('/gallery',function(req,res){
   res.sendFile(path.join(__dirname+'/public/edit_product_gallery.html'));
 });
 
+app.get('/VisionTrucking',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/front_end/index.html'));
+});
+
+app.get('/ProductGallery',function(req,res){
+  res.sendFile(path.join(__dirname+'/public/front_end/product.html'));
+});
+
 app.listen(port,  () => {
   console.log('Server started on port'+port);
 });
